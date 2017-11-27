@@ -9,7 +9,7 @@ var input_width = $("#input_width").val();
 
 // When size is submitted by the user, call makeGrid()
 $(document).ready(function() {
-	$("#sizePicker input:submit").on("click", makeGrid);
+	$("#sizePicker input:button").on("click", makeGrid);
 });
 
 function makeGrid() {
