@@ -1,24 +1,14 @@
 
-// Select color input
-var color = $("#colorPicker").val();
-
-// Select size input
-var inputHeight = $("#input_height").val();
-var inputWidth = $("#input_width").val();
-
-
-// When size is submitted by the user, call makeGrid()
-$(document).ready(function() {
-	$("#sizePicker input:button").on("click", makeGrid);
-});
+// event when size is submitted by the user, call makeGrid()
+$("#sizePicker input:button").on("click", makeGrid);
 
 /**
  * @description build grid based on submitted size
  */
 function makeGrid() {
 	// Select size input
-	inputHeight = $("#input_height").val();
-	inputWidth = $("#input_width").val();
+	var inputHeight = $("#input_height").val();
+	var inputWidth = $("#input_width").val();
 
 	// select grid element
 	var myGrid = document.getElementById('pixel_canvas');
@@ -40,5 +30,18 @@ function makeGrid() {
 	}
 }
 
+// event when cell clicked to change its background color
+$("#pixel_canvas").on("click", "td", changeCellBackgroundColor);
+
+/**
+ * @description change cell background color
+ */
+function changeCellBackgroundColor() {
+	// Select color input
+	var color = $("#colorPicker").val();
+
+	//Changing selected cell background color
+	$(this).css("background-color" , color);
+}
 
 
