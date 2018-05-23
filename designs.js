@@ -32,6 +32,7 @@ function makeGrid() {
 
 // event when cell clicked to change its background color
 $("#pixel_canvas").on("click", "td", changeCellBackgroundColor);
+$("#pixel_canvas").on("mousedown", "td", changeCellBackgroundColor);
 
 /**
  * @description change cell background color
