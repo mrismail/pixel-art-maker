@@ -45,4 +45,16 @@ function changeCellBackgroundColor() {
 	$(this).css("background-color" , color);
 }
 
+// event when cell double clicked to clear its background color
+$("#pixel_canvas").on("dblclick", "td", clearCellBackgroundColor);
+
+/**
+ * @description clear cell background color
+ */
+function clearCellBackgroundColor() {
+
+	//Changing selected cell background color
+	$(this).css("background-color", "white");
+}
+
 
